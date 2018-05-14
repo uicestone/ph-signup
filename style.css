@@ -31,13 +31,25 @@ body {
 	background-size: cover;
 }
 
+.result .logo, .result-sub .logo {
+	left: 12%;
+	top: 9%;
+	width: 80px;
+	height: 80px;
+}
+
+.result-sub {
+	background-image: url('images/bg-result-sub.jpg');
+	background-size: cover;
+}
+
 .circle {
 	position: absolute;
     top: 40%;
     left: 50%;
     width: 800px;
     height: 800px;
-    margin:-400px 0 0 -400px;
+    margin: -400px 0 0 -400px;
     animation:spin 4s linear infinite;
     /*opacity: 0.7;*/
 }
@@ -48,7 +60,7 @@ body {
     left: 50%;
     width: 800px;
     height: 800px;
-    margin:-400px 0 0 -400px;
+    margin: -400px 0 0 -400px;
     /*opacity: 0.7;*/
 }
 
@@ -63,7 +75,7 @@ body {
 }
 
 .glow {
-	animation:glow 2s linear infinite;
+	animation:glow 2s ease-in-out infinite;
 }
 
 .clock-spin {
@@ -110,5 +122,16 @@ body {
 	right: 0;
 	width: 463px;
 	height: 150px;
+    margin: auto;
+}
+
+.result-next-button {
+	z-index: 1;
+	position: absolute;
+	bottom: 15.7%;
+	left: 0;
+	right: 0;
+	width: 301px;
+	height: 96px;
     margin: auto;
 }

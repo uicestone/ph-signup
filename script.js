@@ -9,6 +9,9 @@ jQuery(function ($) {
 	.on('touchend', '.finger', function () {
 		clearTimeout(window.fingerTimeout);
 		console.log('Finger timeout canceled.')
+	})
+	.on('click', '.result-next-button', function () {
+		showSubResult();
 	});
 });
 
@@ -22,13 +25,24 @@ function fingerPressed () {
 
 function showResult () {
 	var resultIndex;
+	var resultText = $('.result-text');
 
 	if (!localStorage.sequence) {
 		localStorage.sequence = 0;
+	} else {
+		localStorage.sequence++;
 	}
 
 	resultIndex = localStorage.sequence % 5;
 
 	$('.home').hide();
+	resultText.each(function () {
+		$(this).attr('src', $(this).data('src').replace('{{sequence}}', resultIndex));
+	});
 	$('.result').show();
+}
+
+function showSubResult () {
+	$('.result').fadeOut(3000);
+	$('.result-sub').fadeIn(3000);
 }
