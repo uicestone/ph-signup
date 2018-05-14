@@ -3,6 +3,7 @@ body {
 	padding: 0;
 	width: 100%;
 	height: 100%;
+	position: fixed;
 }
 
 @keyframes spin { 100% { transform:rotate(-360deg); } }
@@ -15,10 +16,11 @@ body {
 
 .background {
 	position: absolute;
-	top: 0;
+	top: -20pt;
 	bottom: 0;
 	left: 0;
 	right: 0;
+	overflow: hidden;
 }
 
 .home {
@@ -61,6 +63,9 @@ body {
     width: 800px;
     height: 800px;
     margin: -400px 0 0 -400px;
+	user-select: none;
+	-webkit-user-select: none;
+	-webkit-touch-callout: none
     /*opacity: 0.7;*/
 }
 
