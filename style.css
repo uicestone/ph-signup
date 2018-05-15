@@ -19,7 +19,7 @@ body {
 
 .background {
 	position: absolute;
-	top: 0;
+	top: -20pt;
 	bottom: 0;
 	left: 0;
 	right: 0;
