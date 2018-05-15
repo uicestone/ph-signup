@@ -1,17 +1,17 @@
 jQuery(function ($) {
 	$('body').on('click', '.home-bottom-button', function () {
 		// console.log('home-bottom-button');
-		$('.scene-home').fadeOut(1000, function () {
-			$('.scene-finger').fadeIn(1000);
+		$('.scene-home').fadeOut(500, function () {
+			$('.scene-finger').fadeIn(500);
 		});
 	})
 	.on('contextmenu', '.finger', function (e) {
 		e.preventDefault();
 	})
-	.on('touchstart', '.finger', function () {
-		window.fingerTimeout = setTimeout(fingerPressed, 2000);
+	.on('touchstart mousedown', '.finger', function () {
+		window.fingerTimeout = setTimeout(fingerPressed, 1000);
 	})
-	.on('touchend', '.finger', function () {
+	.on('touchend mouseup', '.finger', function () {
 		clearTimeout(window.fingerTimeout);
 		console.log('Finger timeout canceled.')
 	})
@@ -28,9 +28,9 @@ jQuery(function ($) {
 
 function fingerPressed () {
 	console.log('Finger timeout fullfilled.');
-	$('.scene-finger').fadeOut(1000, function () {
+	$('.scene-finger').fadeOut(function () {
 		$('.scene-working').fadeIn(function () {
-			setTimeout(showResult, 3000);
+			setTimeout(showResult, 1500);
 		});
 	});
 	
@@ -58,6 +58,7 @@ function showResult () {
 }
 
 function showSubResult () {
-	$('.result').fadeOut(3000);
-	$('.result-sub').fadeIn(3000);
+	$('.result').fadeOut(500, function () {
+		$('.result-sub').fadeIn(500);
+	});
 }
