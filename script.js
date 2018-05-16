@@ -17,10 +17,17 @@ jQuery(function ($) {
 	.on('click', '.result-next-button', function () {
 		showSubResult();
 	})
+	.on('click', '.to-go', function () {
+		$('.result').cssFadeOut();
+		$('.result-sub').cssFadeOut();
+		$('.home').cssFadeIn();
+		$('.scene-go').cssFadeIn();
+	})
 	.on('click', '.back-to-home', function () {
-		$('.result').cssHide();
-		$('.result-sub').cssHide();
-		$('.home').cssShow();
+		$('.result').cssFadeOut();
+		$('.result-sub').cssFadeOut();
+		$('.home').cssFadeIn();
+		$('.scene-go').cssHide();
 		$('.scene-home').cssShow();
 	});
 });
